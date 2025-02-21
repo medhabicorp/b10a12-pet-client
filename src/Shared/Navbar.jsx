@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import {
   Avatar,
@@ -16,6 +16,7 @@ import { Link, NavLink } from "react-router-dom";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import logo from "../assets/logo/logo circle.png";
 import menuIcon from "../assets/logo/menuIcon.png";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [navbarToggle, setNavbarToggle] = useState(false);
@@ -74,14 +75,16 @@ const Navbar = () => {
             </button>
 
             {/* logo/title */}
-            <Typography
-              as="a"
-              variant="h6"
-              className="flex flex-col md:flex-row items-center md:gap-2"
-            >
-              <img src={logo} alt="Logo" className="h-12 w-12 rounded-full" />
-              <span className="text-lg lg:text-2xl">POWTOPIA</span>
-            </Typography>
+            <Link>
+              <Typography
+                as="a"
+                variant="h6"
+                className="flex flex-col md:flex-row items-center md:gap-2"
+              >
+                <img src={logo} alt="Logo" className="h-12 w-12 rounded-full" />
+                <span className="text-lg lg:text-2xl">POWTOPIA</span>
+              </Typography>
+            </Link>
           </div>
 
           {/* menu/button */}
@@ -96,7 +99,7 @@ const Navbar = () => {
                 Pet Listing
               </Typography>
             </NavLink>
-            <NavLink to="/donationCampaigns">
+            <NavLink to="/donationCampaign">
               <Typography className="cursor-pointer text-md font-bold">
                 Donation
               </Typography>
